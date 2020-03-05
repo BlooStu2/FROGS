@@ -8,12 +8,13 @@ public class Square{
     private ImageIcon g = new ImageIcon("./assets/GreenFrog.png");
     private ImageIcon gg = new ImageIcon("./assets/GreenFrog2.png");
     public JButton b;
+    private String type = "Water"
 
+    public Square(){
+        b = new JButton(w);
+    }
     public Square(String yeet){
-        if (yeet.equals("Water")){
-            b = new JButton(w);
-        }
-        else if (yeet.equals("Lily")){
+        if (yeet.equals("Lily")){
             b = new JButton(l);
         }
         else if (yeet.equals("RedFrog")){
@@ -48,5 +49,8 @@ public class Square{
         else if(item.equals("gg")){
             b.setIcon(gg);
         }
+    }
+    public String getType(){
+        if(b.getIcon)
     }
 }
