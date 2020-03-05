@@ -29,4 +29,24 @@ public class Square{
             b = new JButton(gg);
         }
     }
+    public void Change(String item){
+        if(item.equals("w")){
+            b.setIcon(w);
+        }
+        else if(item.equals("l")){
+            b.setIcon(l);
+        }
+        else if(item.equals("r")){
+            b.setIcon(r);
+        }
+        else if(item.equals("rg")){
+            b.setIcon(rg);
+        }
+        else if(item.equals("g")){
+            b.setIcon(g);
+        }
+        else if(item.equals("gg")){
+            b.setIcon(gg);
+        }
+    }
 }
