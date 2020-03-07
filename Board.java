@@ -13,7 +13,7 @@ public class Board{
     public Board(){
         frame.setSize(750,750);
         panel.setLayout(layout);
-        levels[0] = new String[] {"l","l","l","l","l","l","l","l","l","l","l","l","l"};
+        levels[0] = new String[] {"l","g","l","l","l","l","l","l","l","l","l","l","l"};
 
         for(int i = 0; i<5; i++){      //eventually change i++ to i+=2 to remove lilyswitch
             for(int j = 0; j<5; j++){
