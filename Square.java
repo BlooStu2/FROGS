@@ -8,49 +8,54 @@ public class Square{
     private ImageIcon g = new ImageIcon("./assets/GreenFrog.png");
     private ImageIcon gg = new ImageIcon("./assets/GreenFrog2.png");
     public JButton b;
-    private String type = "Water"
+    private String type = "w";
 
     public Square(){
         b = new JButton(w);
     }
     public Square(String yeet){
-        if (yeet.equals("Lily")){
+        type = yeet;
+        b = new JButton(yeet);
+        if (type.equals("l")){
             b = new JButton(l);
         }
-        else if (yeet.equals("RedFrog")){
+        else if (type.equals("r")){
             b = new JButton(r);
         }
-        else if (yeet.equals("GreenFrog")){
+        else if (type.equals("g")){
             b = new JButton(g);
         }
-        else if (yeet.equals("RedFrogSel")){
+        else if (type.equals("rg")){
             b = new JButton(rg);
         }
-        else if (yeet.equals("GreenFrogSel")){
+        else if (type.equals("gg")){
             b = new JButton(gg);
         }
     }
-    public void Change(String item){
-        if(item.equals("w")){
+    public void Update(){
+        if(type.equals("w")){
             b.setIcon(w);
         }
-        else if(item.equals("l")){
+        else if(type.equals("l")){
             b.setIcon(l);
         }
-        else if(item.equals("r")){
+        else if(type.equals("r")){
             b.setIcon(r);
         }
-        else if(item.equals("rg")){
+        else if(type.equals("rg")){
             b.setIcon(rg);
         }
-        else if(item.equals("g")){
+        else if(type.equals("g")){
             b.setIcon(g);
         }
-        else if(item.equals("gg")){
+        else if(type.equals("gg")){
             b.setIcon(gg);
         }
     }
+    public void Change(String item){
+        type = item;
+    }
     public String getType(){
-        if(b.getIcon)
+        return type;
     }
 }
