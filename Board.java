@@ -123,37 +123,44 @@ public class Board implements ActionListener{
                             else{
                                 pressedSquare.Change("r");
                             }
-                            selectsquare.Change("l");
-                            buttList[(newi+oldi)/2][(newj+oldj)/2].Change("l");
-                            this.checkLevel();
                         }
                         else if((buttList[(newi+oldi)/2][(newj+oldj)/2].getType().equals("r"))){
                             pressedSquare.Change("g");
-                            selectsquare.Change("l");
-                            buttList[(newi+oldi)/2][(newj+oldj)/2].Change("l");
                             this.gameOver();
                         }
-                    }
-                    else if ((Math.abs(newi - oldi) == 1) && (Math.abs(newj - oldj) == 1)){
-                        if((buttList[newi][newj].getType().equals("l"))){
+                        else{
+                            movemode = false;
                             if(selectsquare.getType().equals("gg")){
                                 pressedSquare.Change("g");
                             }
-                            else{
+                            else if(selectsquare.getType().equals("rg")){
                                 pressedSquare.Change("r");
                             }
-                            buttList[oldi][oldj].Change("l");
-                            System.out.println(selectsquare.getType());
+                            return;
+                        }
+                        selectsquare.Change("l");
+                        buttList[(newi+oldi)/2][(newj+oldj)/2].Change("l");
+                        movemode = false;
+                        this.checkLevel();
+                    }
+                    else if ((Math.abs(newi - oldi) == 1) && (Math.abs(newj - oldj) == 1)){
+                        if((buttList[newi][newj].getType().equals("l"))){
+                           buttList[oldi][oldj].Change("l");
                         }
                     }
-                    else{
-                        if(selectsquare.getType().equals("gg")){
-                            pressedSquare.Change("g");
-                        }
-                        else{
-                            pressedSquare.Change("r");
-                        }
+                    if(selectsquare.getType().equals("gg")){
+                        pressedSquare.Change("g");
                     }
+                    else if(selectsquare.getType().equals("rg")){
+                        pressedSquare.Change("r");
+                    }
+                    return;
+                }
+                if(selectsquare.getType().equals("gg")){
+                        selectsquare.Change("g");
+                }
+                    else if(selectsquare.getType().equals("rg")){
+                        selectsquare.Change("r");
                 }
                 movemode = false;
             }
@@ -174,10 +181,11 @@ public class Board implements ActionListener{
     }
 
     public void checkLevel(){
+        System.out.println("yeet");
         for(int i=0; i<5; i++){
             for(int j=0; j<5; j++){
                 if(buttList[i][j].getType().equals("g")){
-                    System.out.println("check");
+                    System.out.println("123");
                     return;
                 }
             }
